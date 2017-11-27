@@ -11,7 +11,8 @@ public class NumberGuesser {
         // 1 + new Random().nextInt()%100;
         int s = 0;
         int j = 1;
-        while (j <=8){
+        while (j <= 8){
+            System.out.println("Попытка №" + j +": ");
             Scanner scanner = new Scanner(System.in);
             s = Integer.parseInt(scanner.nextLine());
             if (i == s) {
@@ -19,11 +20,11 @@ public class NumberGuesser {
                 j = 9;
 
             }
-            else if (i >= s) {System.out.println("Загаданное число больше "+s);}
-            else  {System.out.println("Загаданное число меньше "+s);};
+            else if (i >= s) {System.out.println("Загаданное число больше " + s);}
+            else  {System.out.println("Загаданное число меньше " + s);};
             j++;
         }
-        if (!(i == s)) {System.out.println("Загаданное число = "+i);}
+        if (!(i == s)) {System.out.println("GAME OWER, дружок! Загаданное число - "+i);}
 
 
 
