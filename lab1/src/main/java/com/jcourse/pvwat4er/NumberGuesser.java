@@ -8,26 +8,44 @@ public class NumberGuesser {
 
     public static void main(String[] args) {
         int i = new Random().nextInt(100) + 1;
-        // 1 + new Random().nextInt()%100;
         int s = 0;
-        int j = 1;
-        while (j <= 8){
+        int j = 0;
+        while (j <= 7){
+            j++;
             System.out.println("Попытка №" + j +": ");
             Scanner scanner = new Scanner(System.in);
-            s = Integer.parseInt(scanner.nextLine());
-            if (i == s) {
-                System.out.println("Ура! Это "+ s);
-                j = 9;
+            try {
+                s = Integer.parseInt(scanner.nextLine());
+                if ((s > 100) || (s < 1)) {
+                    System.out.println("Загадано число от 1 до 100. Попытка потрачена впустую");
+                }
+                else if (i == s) {
+                    System.out.println("Ура! Это "+ s);
+                    j = 9;
+                }
+                else if (i >= s) {
+                    System.out.println("Загаданное число больше " + s);
+                }
+                else  {
+                    System.out.println("Загаданное число меньше " + s);
+                }
+
 
             }
-            else if (i >= s) {System.out.println("Загаданное число больше " + s);}
-            else  {System.out.println("Загаданное число меньше " + s);};
-            j++;
+            catch (NumberFormatException ex) {
+                System.out.println("Введите натуральное число от 1 до 100. Ваша попытка сгорает");
+            }
+
+
+
+
         }
         if (!(i == s)) {System.out.println("GAME OWER, дружок! Загаданное число - "+i);}
 
 
 
     }
+
+
 }
 
