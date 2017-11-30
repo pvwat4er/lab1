@@ -21,7 +21,7 @@ public class NumberGuesser {
                 }
                 else if (i == s) {
                     System.out.println("Ура! Это "+ s);
-                    j = 9;
+                    break;
                 }
                 else if (i >= s) {
                     System.out.println("Загаданное число больше " + s);
@@ -40,7 +40,7 @@ public class NumberGuesser {
 
 
         }
-        if (!(i == s)) {System.out.println("GAME OWER, дружок! Загаданное число - "+i);}
+        if ((i != s)) {System.out.println("GAME OWER, дружок! Загаданное число - "+i);}
 
 
 
